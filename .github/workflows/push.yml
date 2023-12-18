@@ -1,0 +1,22 @@
+name: Build Image On Push
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - "*"
+  pull_request:
+    branches: [main]
+
+jobs:
+  build_push_latest_image:
+    uses: ./.github/workflows/docker-image.yml
+    if: ${{ github.ref_name == 'main' }}
+    secrets: inherit
+
+  build_push_tag:
+    uses: ./.github/workflows/docker-image.yml
+    if: ${{ github.ref_type == 'tag' }}
+    secrets: inherit
+    with:
+      version: ${{github.ref_name}}
