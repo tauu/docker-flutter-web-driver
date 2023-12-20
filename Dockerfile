@@ -31,9 +31,9 @@ ADD https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/f
 RUN tar xf flutter_linux.tar.xz
 RUN rm flutter_linux.tar.xz
 # root user version
-RUN chown -r root:root flutter
+RUN chown -R root:root flutter
 # non-root user version
-# RUN chown -r flutter:flutter flutter
+# RUN chown -R flutter:flutter flutter
 
 # Setup paths for flutter installation.
 ENV FLUTTER_HOME="/home/flutter/flutter"
