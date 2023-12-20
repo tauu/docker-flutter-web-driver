@@ -27,13 +27,13 @@ RUN mkdir -p /home/flutter
 ARG FLUTTER_VERSION="3.16.4"
 
 WORKDIR /home/flutter
-# non-root user version
-# ADD --chown=flutter:flutter https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz flutter_linux.tar.xz
-# root user version
 ADD https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz flutter_linux.tar.xz
 RUN tar xf flutter_linux.tar.xz
 RUN rm flutter_linux.tar.xz
-RUN ls -la
+# root user version
+RUN chown -r root:root flutter
+# non-root user version
+# RUN chown -r flutter:flutter flutter
 
 # Setup paths for flutter installation.
 ENV FLUTTER_HOME="/home/flutter/flutter"
