@@ -14,10 +14,10 @@ RUN apt-get update -y  && \
     apt-get install -y xvfb google-chrome-stable && \
     rm -rf /var/lib/apt/lists/*
 
-# Create a user for running flutter.
-RUN groupadd -r -g 1337 flutter
-RUN useradd  -r -u 1337 -g flutter -m flutter
-USER flutter:flutter
+# # Create a user for running flutter.
+# RUN groupadd -r -g 1337 flutter
+# RUN useradd  -r -u 1337 -g flutter -m flutter
+# USER flutter:flutter
 
 # Install flutter.
 ARG FLUTTER_VERSION="3.16.4"
