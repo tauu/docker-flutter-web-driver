@@ -24,7 +24,7 @@ RUN apt-get update -y  && \
 RUN mkdir -p /home/flutter
 
 # Install flutter.
-ARG FLUTTER_VERSION="3.16.4"
+ARG FLUTTER_VERSION="3.13.9"
 
 WORKDIR /home/flutter
 ADD https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz flutter_linux.tar.xz
