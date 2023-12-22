@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source=https://github.com/tauu/docker-flutter-web
 # Install dependencies for flutter. For a list of all dependencies,
 # see https://docs.flutter.dev/get-started/install/linux
 RUN apt-get update && \
-    apt-get install -y bash curl git unzip xz-utils zip wget gnupg2
+    apt-get install -y bash curl git unzip xz-utils zip gnupg2 jq
     
 # Install google chrome from official apt.
 RUN curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
